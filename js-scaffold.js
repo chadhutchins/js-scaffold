@@ -76,4 +76,13 @@ Resource.prototype = {
     }
 };
 
+// Scaffold the members resource
 var member = new Resource('members');
+
+// Call members/index from  your rails app
+// and loop through the resulting members
+member.index(function(members){
+   for (var i=0;i<members.length;i++) {
+       console.log(members[i].id+": "+members[i].name);
+   } 
+});
